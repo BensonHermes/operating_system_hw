@@ -19,9 +19,9 @@ static ssize_t proc_read(struct file *file, char *buf, size_t count, loff_t *pos
 
 
 //而關於這個 proc 檔案的設定，則定義在 proc_ops 這個 file_operations 資料結構裡。
-static struct file_operations proc_ops = {
-        .owner = THIS_MODULE,// proc所有者
-        .read = proc_read,// 訪問proc时需要调用的函数
+static struct proc_ops proc_ops = {
+//        .owner = THIS_MODULE,// proc所有者
+        .proc_read = proc_read,// 訪問proc时需要调用的函数
 };
 
 
